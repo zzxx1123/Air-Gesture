@@ -1,0 +1,16 @@
+AirGesture 隔空手势
+Copyright 2026 冰狼 (Binglang)
+
+This product bundles the MediaPipe Hand Landmarker model
+(hand_landmarker.task), provided by Google, licensed under the
+Apache License, Version 2.0:
+  https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+
+This product uses the following open-source libraries:
+  - MediaPipe Tasks Vision (Google, Apache-2.0)
+  - libsu (topjohnwu, Apache-2.0)
+  - AndroidX CameraX (Google, Apache-2.0)
+
+This project is a clean-room reimplementation of air-gesture
+interactions based solely on publicly observable behavior.
+It contains no proprietary code from any device vendor.

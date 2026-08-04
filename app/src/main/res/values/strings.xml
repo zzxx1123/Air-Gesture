@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">隔空手势</string>
+    <string name="acc_desc">用于将隔空手势映射为屏幕滑动与截屏操作</string>
+    <string name="channel_name">手势服务</string>
+    <string name="notif_running">隔空手势运行中（后端：%1$s）</string>
+</resources>

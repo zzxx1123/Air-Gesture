@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:text="状态检测中…"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/sw_enable"
+            android:text="启用隔空手势（总开关）"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_accessibility"
+            android:text="打开无障碍设置（无 Root 后端）"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_root"
+            android:text="申请 / 检测 Root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox android:id="@+id/cb_root" android:text="优先使用 Root 注入后端"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <CheckBox android:id="@+id/cb_vibrate" android:text="震动反馈（识别/触发时）"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <CheckBox android:id="@+id/cb_mirrorx" android:text="左右镜像（挥动方向反了就开/关）"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <CheckBox android:id="@+id/cb_mirrory" android:text="上下镜像"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:text="—— 判定参数（上机磨） ——" android:paddingTop="16dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_hold" android:text="起手式停顿"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_hold" android:max="80"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_swipe" android:text="挥动幅度阈值"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_swipe" android:max="20"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_grab" android:text="握拳灵敏度"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_grab" android:max="40"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_scalemin" android:text="距离下限（手太小拒识）"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_scalemin" android:max="15"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_scalemax" android:text="距离上限（手太大拒识）"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_scalemax" android:max="30"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:id="@+id/tv_cooldown" android:text="触发冷却"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <SeekBar android:id="@+id/sb_cooldown" android:max="110"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

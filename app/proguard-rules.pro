@@ -1,0 +1,3 @@
+-keep class com.google.mediapipe.** { *; }
+-keep class com.topjohnwu.** { *; }
+-dontwarn com.google.mediapipe.**
