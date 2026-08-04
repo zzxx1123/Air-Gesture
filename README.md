@@ -44,3 +44,7 @@ minSdk 26 / targetSdk xx ；依赖：CameraX、MediaPipe tasks-vision、libsu。
 - 部分ROM/OS可能限制磁贴启动前台服务，会自动跳回主界面手动开启
 - 弱光下 MediaPipe 识别率下降属物理限制；背光剪影同理（此为正常现象）
 - 无障碍后端滑动可能有系统级额外延迟，属正常
+
+
+本人的第一个较为成型的项目，欢迎大家在issue反馈意见和BUG等问题，第一个项目，不咋地，见谅。
+联系方式可以用以下邮箱：www.zzxxcctv@outlook.com
