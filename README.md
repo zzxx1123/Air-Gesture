@@ -1,22 +1,17 @@
 # 隔空手势（AirGesture）
 
-华为语义隔空手势的净室重实现：起手式停顿 → 四向挥动翻页 / 握拳截屏。
-纯 Kotlin 编写，感知、判定、注入三层解耦，注入层双后端（无障碍 / Root）运行时自选。
+华为语义隔空手势的净室重实现（从现象完全黑盒逆向写出代码模拟隔空手势）：起手式停顿 → 四向挥动翻页于握拳截屏。
+纯 Kotlin 编写，感知、判定、注入三层解耦，实现方案：ROOT与无障碍（非ROOT下可利用无障碍，后续会完善ADB启动，但对于该项目不太推荐ADB）
 
-## 构建
+minSdk 26 / targetSdk xx ；依赖：CameraX、MediaPipe tasks-vision、libsu。
 
-1. Android Studio（Hedgehog 或更新）打开本目录，等待 Gradle Sync
-   （若提示缺少 Gradle Wrapper，让 Studio 自动生成本地 Wrapper 即可）
-2. `hand_landmarker.task`（MediaPipe 手部模型）已置于 `app/src/main/assets/`，无需额外下载
-3. Build → Build APK，签名后安装
-
-minSdk 26 / targetSdk 34。依赖：CameraX、MediaPipe tasks-vision、libsu。
+由于全通用的，所以targetSDK暂无限制，
 
 ## 首次使用顺序
 
 1. 打开 App，授予相机（和通知）权限
 2. 二选一准备注入后端：
-   - 有 Root：点「申请 / 检测 Root」，Magisk 弹窗授权（推荐，延迟低）
+   - 有 Root：点「申请 / 检测 Root」，SU管理器授权（Magisk、kernelSU、Apatch三者均可正常授予，本项目APP均可正常工作
    - 无 Root：点「打开无障碍设置」，启用「隔空手势」无障碍服务
 3. 打开总开关（App 内 Switch 或快捷设置磁贴）
 4. 前置摄像头前 20~40cm 张掌停顿约半秒（震动=已识别，等同华为的手型图标），
@@ -30,7 +25,7 @@ minSdk 26 / targetSdk 34。依赖：CameraX、MediaPipe tasks-vision、libsu。
 | 上 / 下 / 左 / 右挥 | 同向滑动（翻页） |
 | 张掌后握拳收束 | 截屏 |
 
-## 磨参指南（设置界面六个滑杆）
+## 磨合调教指南（设置界面六个滑杆）
 
 | 参数 | 含义 | 调大的效果 |
 |---|---|---|
@@ -43,10 +38,9 @@ minSdk 26 / targetSdk 34。依赖：CameraX、MediaPipe tasks-vision、libsu。
 
 方向反了：切换「左右镜像 / 上下镜像」两个开关（前摄分析流的镜像方向因机型而异）。
 
-## 已知边界
-
-- 息屏即停感知（省电设计），亮屏自动恢复
-- 无 Root 且系统 < Android 11：握拳截屏不可用（无障碍 takeScreenshot 需 API 30），四向不受影响
-- 部分系统限制磁贴启动前台服务，会自动跳回主界面手动开启
-- 弱光下 MediaPipe 识别率下降属物理限制；背光剪影同理
-- 无障碍后端滑动有系统级额外延迟，属正常
+## 注意，以下是固有的几个问题，暂且不予理睬：
+- 息屏即停止感知，只有亮屏才工作，
+- 无 Root 且系统低于Android 11的话，握拳截屏不可用（无障碍 takeScreenshot 需 API 30），四向不受影响
+- 部分ROM/OS可能限制磁贴启动前台服务，会自动跳回主界面手动开启
+- 弱光下 MediaPipe 识别率下降属物理限制；背光剪影同理（此为正常现象）
+- 无障碍后端滑动可能有系统级额外延迟，属正常
