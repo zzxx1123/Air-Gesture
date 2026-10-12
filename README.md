@@ -46,5 +46,6 @@ minSdk 26 / targetSdk xx ；依赖：CameraX、MediaPipe tasks-vision、libsu。
 - 无障碍后端滑动可能有系统级额外延迟，属正常
 
 
-本人的第一个较为成型的项目，欢迎大家在issue反馈意见和BUG等问题，第一个项目，不咋地，见谅。
+本人的第一个较为成型的项目，欢迎大家在issue反馈意见和BUG等问题，第一个项目，不咋地，见谅。另外，
+该项目仅验证功能与现象背后的实际运行逻辑的可行性，不保证其性能
 联系方式可以用以下邮箱：www.zzxxcctv@outlook.com
